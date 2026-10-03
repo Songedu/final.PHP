@@ -1,0 +1,29 @@
+AGENDA CULTURAL - INSTALAÇÃO LOCAL
+
+Requisitos
+- PHP com as extensões PDO e pdo_mysql
+- MySQL ou MariaDB
+- Apache (por exemplo, através do XAMPP)
+
+Instalação
+1. Copie o projeto para a pasta web do servidor local.
+2. Importe Final.sql no MySQL para criar a base de dados final_projecto,
+   as tabelas e os dados de demonstração dos eventos e bilhetes.
+3. Configure a ligação à base de dados através das variáveis de ambiente
+   DB_HOST, DB_NAME, DB_USER e DB_PASS. Não guarde palavras-passe no Git.
+4. Inicie Apache e MySQL e abra http://localhost/Projecto%20final/.
+5. Crie a sua própria conta pela página de registo.
+
+Para conceder permissões de administrador a uma conta local, execute no
+phpMyAdmin/MySQL, substituindo o nome de utilizador pelo valor escolhido:
+
+UPDATE users SET role = 'admin' WHERE username = 'o_seu_utilizador';
+
+Não existem credenciais de demonstração pré-configuradas neste repositório.
+Use apenas dados fictícios no ambiente de avaliação e nunca reutilize
+palavras-passe pessoais.
+
+Para testar noutro dispositivo na mesma rede Wi-Fi, obtenha o IPv4 do
+computador que executa o Apache e aceda a:
+
+http://IP_DO_COMPUTADOR/Projecto%20final/

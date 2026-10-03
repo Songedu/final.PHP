@@ -1,0 +1,49 @@
+erDiagram
+    EVENTOS {
+        INT id PK
+        VARCHAR nome
+        TEXT descricao
+        DATE data
+        TIME hora
+        VARCHAR local
+        INT capacidade
+        VARCHAR imagem
+    }
+
+    BILHETES {
+        INT id PK
+        INT evento_id FK
+        DECIMAL preco
+        VARCHAR numero_assento
+    }
+
+    USERS {
+        INT id PK
+        VARCHAR username UK
+        VARCHAR email UK
+        VARCHAR password
+        VARCHAR profile_pic
+        ENUM role
+        TIMESTAMP created_at
+    }
+
+    CLIENTES {
+        INT id PK
+        INT user_id FK "nullable"
+        VARCHAR nome
+        VARCHAR email
+        VARCHAR telefone
+        TIMESTAMP created_at
+    }
+
+    VENDAS {
+        INT id PK
+        INT bilhete_id FK, UK
+        DATETIME data_venda
+        INT user_id FK "nullable"
+    }
+
+    EVENTOS ||--o{ BILHETES : "tem"
+    USERS o|--o{ CLIENTES : "associado a"
+    BILHETES ||--o| VENDAS : "vendido em"
+    USERS o|--o{ VENDAS : "realiza"

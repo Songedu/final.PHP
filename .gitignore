@@ -1,0 +1,21 @@
+# Local Python environment
+.venv/
+
+# Local editor configuration
+.vscode/
+
+# User-uploaded profile images
+/uploads/
+
+# Local backups and diagnostics
+/Final_backup.sql
+/debug_eventos.php
+*.log
+
+# Environment configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Local-only documentation contains test login credentials
+/documentacao_projeto.pdf
